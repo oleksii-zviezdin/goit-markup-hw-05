@@ -1,0 +1,667 @@
+:root {
+	/* background-color  */
+	--background-color-header: #ffffff;
+	--background-color-footer-hero: #2f303a;
+	--background-color-teams: #f5f4fa;
+	--background-color-button: #2196f3;
+	--background-color-button-disactive: #f5f4fa;
+	--background-color-button-accent: #188ce8;
+	--background-color-team-caption: #ffffff;
+	--background-color-card-content: #ffffff;
+	--background-color-socials-icons: rgba(33, 150, 243, 1);
+	--background-color-socials-icons-footer: rgba(255, 255, 255, 0.1);
+	--background-color-icons-strengths: rgba(245, 244, 250, 1);
+
+	/* text color */
+	--accent-text-color: #2196f3;
+	--color-text-white: #ffffff;
+
+	/* icons color */
+	--social-icons-color: rgba(175, 177, 184, 1);
+	--social-icons-active-color: rgba(255, 255, 255, 1);
+
+	--social-icons-footer-color: rgba(255, 255, 255, 1);
+
+	--costumer-color: rgba(175, 177, 184, 1);
+	--costumer-accent-color: rgba(33, 150, 243, 1);
+
+	/* hero <h1> */
+	--h1-headline-text-color: #ffffff;
+
+	/* <h> */
+	--h-headline-text-color: #212121;
+	--border-botton-header: #ececec;
+
+	/* <p> color */
+	--primary-text-color: #757575;
+
+	/* contact-footer */
+	--footer-contact-color: rgba(255, 255, 255, 0.6);
+	--address-text-color: #ffffff;
+
+	/* logo color */
+	--web-color: #2196f3;
+	--color-studio-footer: #ffffff;
+	--color-studio-header: #000000;
+
+	/* width-gap */
+	--width-gap-header: 50px;
+	--width-gap-list: 30px;
+
+	/* box-shadow */
+	--card-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+		0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	--button-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+		0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+	/* gap-pieces */
+	--gap-pieces: 2;
+
+	/* column-pieces */
+	--column-pieces: 3;
+
+	/* border */
+	--card-border-color: #eeeeee;
+}
+
+/* General setting */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	background-color: var(--background-color-header);
+	color: var(--primary-text-color);
+	font-family: "Roboto", "Verdana", "Geneva", "Tahoma", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.visually-hidden {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+
+/* container style */
+.container {
+	/* display: flex; */
+	margin-right: auto;
+	margin-left: auto;
+	width: 1200px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	/* outline: 1px solid red; to remove */
+}
+
+.section.no-padding-down {
+	padding-bottom: 0;
+}
+
+.section {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.gap-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--width-gap-list);
+}
+
+/*-------------------------HEADER*-------------------------*/
+.header {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.02em;
+
+	border-bottom: 1px solid var(--border-botton-header);
+}
+
+.link-header {
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+/* logo */
+.logo {
+	display: inline-block;
+	font-family: "Raleway";
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 1.19;
+	letter-spacing: 0.03em;
+
+	color: var(--accent-text-color);
+}
+
+.logo-header {
+	color: var(--color-studio-header);
+}
+
+.logo-footer {
+	color: var(--color-studio-footer);
+}
+
+/* navigation site */
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav-link {
+	display: block;
+	color: var(--h-headline-text-color);
+}
+
+.navigation {
+	margin-left: 90px;
+}
+
+.nav-list {
+	display: flex;
+	/* flex-wrap: wrap; */
+	gap: var(--width-gap-header);
+}
+
+.nav-list .link.current {
+	color: var(--accent-text-color);
+}
+
+.list {
+	list-style: none;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+	color: var(--accent-text-color);
+}
+
+.email,
+.smartphone {
+	fill: currentColor;
+}
+
+/* contact header */
+.contact-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	color: var(--primary-text-color);
+}
+
+.contact-list {
+	display: flex;
+	gap: 50px;
+	margin-left: auto;
+	align-items: center;
+}
+
+.title {
+	margin-bottom: 50px;
+
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	letter-spacing: 0.03em;
+
+	color: var(--h-headline-text-color);
+}
+
+/*-------------------------MAIN - HTML ------------------------*/
+/*-------------- hero section --------------*/
+.hero {
+	text-align: center;
+	color: var(--h1-headline-text-color);
+	background-color: var(--background-color-footer-hero);
+
+	max-width: 1600px;
+	max-height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-image: linear-gradient(
+			to left,
+			rgba(47, 48, 58, 0.4),
+			rgba(47, 48, 58, 0.4)
+		),
+		url(../images/index/bg-hero.jpg);
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+
+.hero-title {
+	margin-bottom: 30px;
+
+	font-weight: 900;
+	font-size: 44px;
+	line-height: 1.36;
+	text-align: center;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.button {
+	display: inline-block;
+
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.88;
+	letter-spacing: 0.06em;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 32px;
+	padding-right: 32px;
+
+	border: none;
+	color: var(--color-text-white);
+	background-color: var(--background-color-button);
+
+	cursor: pointer;
+
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+}
+
+.button:hover,
+.button:focus {
+	background-color: var(--background-color-button-accent);
+}
+
+/*-------------- STRENGTHS SECTION --------------*/
+.item {
+	min-width: 270px;
+}
+
+.no-wrap {
+	flex-wrap: nowrap;
+}
+
+.strengths-title {
+	margin-bottom: 10px;
+
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+
+	color: var(--h-headline-text-color);
+}
+
+.strengths-description {
+	font-size: 14px;
+	line-height: 1.7;
+	letter-spacing: 0.03em;
+}
+
+/* if delete class "gap-list" from <ul> element in the STRENGTHS SECTION and add class "strengths-list" we can use below code */
+
+/* .strengths-list {
+	display: flex;
+}
+
+.strengths-list li:not(:last-child) {
+	margin-right: 30px;
+} */
+
+.icon-list {
+	display: flex;
+	margin-bottom: 30px;
+	gap: 30px;
+}
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 270px;
+	height: 120px;
+
+	background-color: var(--background-color-icons-strengths);
+	border-radius: 4px;
+}
+/*-------------- WORK SECTION --------------*/
+
+/*-------------- TEAM SECTION --------------*/
+
+.team {
+	background-color: var(--background-color-teams);
+}
+
+.team-title {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.19;
+	justify-content: center;
+	text-align: center;
+	letter-spacing: 0.03em;
+
+	margin-bottom: 10px;
+
+	color: var(--h-headline-text-color);
+}
+
+.team-description {
+	font-size: 16px;
+	line-height: 1.19;
+	text-align: center;
+	justify-content: center;
+	letter-spacing: 0.03em;
+
+	margin-bottom: 16px;
+}
+
+.team-caption {
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	text-align: center;
+
+	background-color: var(--background-color-team-caption);
+
+	border-radius: 0px 0px 4px 4px;
+}
+
+.team-list > li {
+	box-shadow: var(--card-box-shadow);
+	border-radius: 0px 0px 4px 4px;
+}
+
+/* if delete class "gap-list" from <ul> element in the TEAM SECTION and add class "team-list" we can use below code */
+
+/* .team-list {
+	display: flex;
+}
+
+.team-list li:not(:last-child) {
+	margin-right: 30px;
+} */
+
+.socials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.socials-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+
+	border-radius: 50%;
+	color: var(--social-icons-color);
+}
+
+.socials-link:hover,
+.socials-link:focus {
+	color: var(--social-icons-active-color);
+	background-color: var(--background-color-socials-icons);
+}
+
+.socials-icon {
+	fill: currentColor;
+}
+
+/* розширений варіант зміни кольору */
+/* .socials-icon {
+	fill: var(--social-icons-color);
+}
+
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+	fill: var(--social-icons-active-color);
+}
+
+.socials-link:hover,
+.socials-link:focus {
+	background-color: var(--background-color-socials-icons);
+} */
+
+/* COSTUMER */
+
+.costumer {
+	margin: 0;
+}
+
+.costumer-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 170px;
+	height: 92px;
+
+	border: 1px solid var(--costumer-color);
+	border-radius: 4px;
+
+	color: var(--costumer-color);
+}
+
+.costumer-link:hover,
+.costumer-link:focus {
+	color: var(--costumer-accent-color);
+	border-color: var(--costumer-accent-color);
+}
+
+.costumer-icon {
+	fill: currentColor;
+}
+
+/*-------------------------FOOTER-------------------------*/
+
+.footer {
+	display: flex;
+	font-size: 14px;
+	line-height: 1.71;
+	letter-spacing: 0.03em;
+
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	background-color: var(--background-color-footer-hero);
+}
+
+.footer-container {
+	display: flex;
+	gap: 70px;
+}
+
+.socials-footer {
+	color: var(--social-icons-footer-color);
+}
+
+.address {
+	font-style: normal;
+	color: var(--address-text-color);
+}
+.contact-footer {
+	color: var(--footer-contact-color);
+}
+
+.logo-margin {
+	margin-bottom: 20px;
+}
+
+.address-item + .address-item {
+	margin-top: 9px;
+}
+
+.address-link {
+	display: inline-block;
+}
+
+.socials-footer {
+	display: flex;
+	color: var(--social-icons-footer-color);
+	gap: 10px;
+	margin-top: 20px;
+	padding-bottom: 40px;
+}
+
+.footer-title {
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+
+	padding-top: 12px;
+
+	color: var(--color-text-white);
+}
+
+.socials-footer .socials-link {
+	background-color: var(--background-color-socials-icons-footer);
+}
+
+.footer-link {
+	color: var(--color-text-white);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+	background-color: var(--background-color-socials-icons);
+}
+
+/* *** */
+
+/*-------------------------MAIN - PORTFOLIO ------------------------*/
+/*-------------------------list of button ------------------------*/
+.btn {
+	font-family: inherit;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.63;
+	text-align: center;
+	letter-spacing: 0.03em;
+
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 22px;
+	padding-right: 22px;
+
+	background-color: var(--background-color-button-disactive);
+
+	border: none;
+	border-radius: 4px;
+	/* border: 1px solid var(--background-color-button-disactive); */
+}
+.btn:hover,
+.btn:focus {
+	background-color: var(--background-color-button-accent);
+	color: var(--address-text-color);
+
+	box-shadow: var(--button-box-shadow);
+	border-radius: 4px;
+
+	cursor: pointer;
+}
+
+.button-list {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+}
+
+.padding-list-btn {
+	margin-bottom: 50px;
+	padding-bottom: 0;
+}
+
+/*------------------------- gallery work ------------------------*/
+.card {
+	flex-basis: calc(
+		(100% - var(--width-gap-list) * (var(--column-pieces) - 1)) /
+			var(--column-pieces)
+	);
+}
+
+.card:hover,
+.card:focus {
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+		1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* if delete class "gap-list" from <ul> element in the WORK SECTION and add class "work-list" and add class "work-item" for <li> element we can use below code */
+
+/* .work-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.work-list .work-item:not(:nth-child(3)) {
+	margin-right: 30px;
+} */
+
+.card-content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 24px;
+	padding-left: 24px;
+
+	background: var(--background-color-card-content);
+	border-bottom: 1px solid var(--card-border-color);
+	border-right: 1px solid var(--card-border-color);
+	border-left: 1px solid var(--card-border-color);
+}
+
+.portfolio-title {
+	font-size: 18px;
+	line-height: 2;
+	letter-spacing: 0.06em;
+
+	color: var(--h-headline-text-color);
+}
+
+.portfolio-description {
+	font-size: 16px;
+	line-height: 1.88;
+	letter-spacing: 0.03em;
+
+	color: var(--primary-text-color);
+}
+
+.no-padding-top {
+	padding-top: 0;
+}
