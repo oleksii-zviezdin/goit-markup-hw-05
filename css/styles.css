@@ -12,6 +12,8 @@
 	--background-color-socials-icons-footer: rgba(255, 255, 255, 0.1);
 	--background-color-icons-strengths: rgba(245, 244, 250, 1);
 	--background-color-work-section: rgba(47, 48, 58, 0.8);
+	--overlay-background-color: rgba(33, 150, 243, 0.9);
+
 
 	/* text color */
 	--accent-text-color: #2196f3;
@@ -63,6 +65,8 @@
 
 	/* border */
 	--card-border-color: #eeeeee;
+
+	--transform-and-animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* General setting */
@@ -180,6 +184,26 @@ img {
 	color: var(--h-headline-text-color);
 }
 
+.nav-list li {
+	position: relative;
+}
+
+.current::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translateY(1px);
+
+	content: "";
+	display: inline-block;
+	width: 100%;
+	height: 4px;
+
+	border-radius: 2px;
+	
+	background-color: var(--accent-text-color);
+}
+
 .navigation {
 	margin-left: 90px;
 }
@@ -200,10 +224,12 @@ img {
 
 .link {
 	text-decoration: none;
+	transition: color var(--transform-and-animation);
 }
 
 .link:hover,
 .link:focus {
+	outline: none;
 	color: var(--accent-text-color);
 }
 
@@ -298,13 +324,17 @@ img {
 
 	cursor: pointer;
 
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 0px transparent;
 	border-radius: 4px;
+
+	transition: background-color var(--transform-and-animation), box-shadow var(--transform-and-animation);
 }
 
 .button:hover,
 .button:focus {
+	outline: none;
 	background-color: var(--background-color-button-accent);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /*-------------- STRENGTHS SECTION --------------*/
@@ -463,10 +493,13 @@ img {
 
 	border-radius: 50%;
 	color: var(--social-icons-color);
+	background-color: transparent;
+
+	transition: color var(--transform-and-animation), background-color var(--transform-and-animation);
 }
 
-.socials-link:hover,
-.socials-link:focus {
+.socials-link.link:hover,
+.socials-link.link:focus {
 	color: var(--social-icons-active-color);
 	background-color: var(--background-color-socials-icons);
 }
@@ -508,10 +541,13 @@ img {
 	border-radius: 4px;
 
 	color: var(--costumer-color);
+
+	transition: color var(--transform-and-animation), border-color var(--transform-and-animation);
 }
 
 .costumer-link:hover,
 .costumer-link:focus {
+	outline: none;
 	color: var(--costumer-accent-color);
 	border-color: var(--costumer-accent-color);
 }
@@ -618,14 +654,15 @@ img {
 	border: none;
 	border-radius: 4px;
 	/* border: 1px solid var(--background-color-button-disactive); */
+	transition: color var(--transform-and-animation), background-color var(--transform-and-animation), box-shadow var(--transform-and-animation);
 }
 .btn:hover,
 .btn:focus {
+	outline: none;
 	background-color: var(--background-color-button-accent);
 	color: var(--address-text-color);
 
 	box-shadow: var(--button-box-shadow);
-	border-radius: 4px;
 
 	cursor: pointer;
 }
@@ -647,12 +684,42 @@ img {
 		(100% - var(--width-gap-list) * (var(--column-pieces) - 1)) /
 			var(--column-pieces)
 	);
+
+	transition: box-shadow var(--transform-and-animation);
+}
+
+.card-thumb {
+	position: relative;
+	overflow: hidden;
 }
 
 .card:hover,
 .card:focus {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
 		1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.overlay-description {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translateY(100%);
+
+	font-size: 18px;
+	line-height: 1.56;
+	letter-spacing: 0.03em;
+
+	padding: 63px 24px;
+
+	color: var(--color-text-white);
+	background-color: var(--overlay-background-color);
+
+	transition: transform var(--transform-and-animation);
+}
+
+.card:hover .overlay-description,
+.card:focus .overlay-description {
+	transform: translateY(0);
 }
 
 /* if delete class "gap-list" from <ul> element in the WORK SECTION and add class "work-list" and add class "work-item" for <li> element we can use below code */
