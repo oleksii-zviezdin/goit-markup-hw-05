@@ -703,8 +703,7 @@ img {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	transform: translateY(100%);
-
+	
 	font-size: 18px;
 	line-height: 1.56;
 	letter-spacing: 0.03em;
@@ -715,6 +714,7 @@ img {
 	background-color: var(--overlay-background-color);
 
 	transition: transform var(--transform-and-animation);
+	transform: translateY(100%);
 }
 
 .card:hover .overlay-description,
@@ -763,4 +763,79 @@ img {
 
 .no-padding-top {
 	padding-top: 0;
+}
+
+								/* MODAL-WINDOW */
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+
+	background-color: rgba(0, 0, 0, 0.2);
+
+	transition: opacity var(--transform-and-animation), visibility var(--transform-and-animation);
+}
+
+.backdrop.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1);
+
+	width: 528px;
+	min-height: 581px;
+	padding: 15px;
+
+	background: var(--background-color-card-content);
+
+	box-shadow: var(--card-box-shadow);
+	border-radius: 4px;
+
+	transition: transform var(--transform-and-animation);
+}
+
+.backdrop.is-hidden .modal {
+	transform: translate(-50%, -50%) scale(0.9);
+}
+
+.close-modal {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 30px;
+	height: 30px;
+
+	cursor: pointer;
+	
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+
+	background-color: var(--background-color-header);
+
+	transition: background-color var(--transform-and-animation), scale var(--transform-and-animation), box-shadow var(--transform-and-animation);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+	border: none;
+	outline: none;
+	background-color: #e8a9a9;
+}
+
+.close-modal:active {
+	scale: 1.05;
+	box-shadow: var(--card-box-shadow);
 }
