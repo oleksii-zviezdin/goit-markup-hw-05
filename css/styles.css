@@ -249,7 +249,7 @@ img {
 
 .contact-list {
 	display: flex;
-	gap: 50px;
+	gap: var(--width-gap-list);
 	margin-left: auto;
 	align-items: center;
 }
